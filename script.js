@@ -113,5 +113,18 @@
 const btn = document.querySelector('button');
 btn.addEventListener('click', function(evt) {
   // testing!
-  console.log(evt);  
+  console.log(evt);
+  console.dir(evt);
 });
+
+// The event object
+
+//  Examining the event object that was provided as an argument to our
+//  event listener reveals lots of useful information about the event!
+
+//  Of special interest are:
+
+//    Several ...x and ...y properties that provide where the click occurred.
+
+//    The target property, which holds a reference to the DOM element that
+//    triggered (dispatched) the event.
