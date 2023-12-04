@@ -244,7 +244,24 @@ btn.addEventListener('click', function(evt) {
   const inp = document.querySelector('input');
   li.textContent = inp.value;
   // new code below
-  document.querySelector('ul').appendChild(li);
+  if(li.textContent!=""){document.querySelector('ul').appendChild(li);};
+  inp.value = "";
 });
 
 // Note that the new element is appended as the last child.
+
+// Create a new Comment
+
+//  Test it out -nice!
+//   -->   Yeah it is nice - it's awesome creating elements
+//         outside HTML haha
+
+// The new comment has been added, but if we want to
+// improve the UX, we have one more task - clear out the
+// <input>.
+
+//  One line of code is all it takes - you got this!
+//    --> yeah it was just inp.value = ""; line added to
+//        added to btn click event function
+
+
