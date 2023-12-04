@@ -319,7 +319,7 @@ document.querySelector('ul').addEventListener('click', handleClick);
 
 function handleClick(evt) {
   console.log(evt);
-  evt.target.style.color = 'green'
+  evt.target.style.color = 'white'
 }
 
 //  Importantly, the event object's target property is set to the
@@ -346,3 +346,18 @@ function handleClick(evt) {
 
 //   --> Did it!! 
 //   added evt.target.style.color = 'green' to function handleClick(evt) !!
+
+// Removing event listeners
+
+//  It's possible to remove an added event listener, however,
+//  only if a named function was used as the callback:
+
+btn.removeEventListener('click', handleClick);
+// document.querySelector('ul').removeEventListener('click', handleClick);
+//  This would remove the 'click' event listener ( handleClick )
+//  that was registered on the btn element like this:
+//  btn.addEventListener('click', handleClick);
+
+// References
+//  Event Developer Guide on MDN
+//  https://developer.mozilla.org/en-US/docs/Web/Guide/Events
