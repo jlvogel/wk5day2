@@ -265,3 +265,84 @@ btn.addEventListener('click', function(evt) {
 //        added to btn click event function
 
 
+// Event bubbling
+
+//  When an event occurs on an element, that event, whether it
+//  is listened to on that element or not, bubbles up through the
+//  DOM, all the way up to the document object.
+
+// Document <--
+//             |
+//        Element <html>  <--
+//                           |
+//                      Element <body>  <--
+//                                         |
+//                                     Element <div>
+
+// Event bubbling
+
+//  All event listeners registered for the same event, such as
+//  click, will be invoked along the path to the document element
+//  -unless one of those listeners calls the event object's
+//  stopPropagation method.
+
+//  Why does JS bubble up (propagate) its events?...
+
+// Event Delegation
+
+//  Imagine a web app, like a game perhaps, with lots of
+//  elements that need to respond to a click. It's possible there
+//  could be tens, hundreds, or more of these elements.
+
+//  That would be a lot of listeners, wouldn't it - not very efficient
+//  at all.
+
+//  Plus, every time a new element is added, the event listener
+//  would also have to be registered!
+
+// Event Delegation
+
+//  Event bubbling allows us to implement what's known as
+//  event delegation.
+
+//  Event delegation allows us to register a single event listener
+//  that can respond to events triggered by any of its
+//  descendants. Much more efficent!
+
+// Event Delegation
+
+//  Let's register a listener (this time for kicks we'll use a named
+//  function) on the <ul> that can respond to clicks on any of its
+//  <li> s:
+
+document.querySelector('ul').addEventListener('click', handleClick);
+
+function handleClick(evt) {
+  console.log(evt);
+  evt.target.style.color = 'green'
+}
+
+//  Importantly, the event object's target property is set to the
+//  actual element that was clicked!
+
+// Event Delegation
+
+//  Not only is event delegation more efficient, by it's very
+//  design, it's dynamic - as descendants are added, they too will
+//  be listened to!
+
+//  Without event delegation, you would have to register a
+//  listener every time a new element, such as when the
+//  comment <li> is added.
+
+// Event Delegation (Practice)
+
+//  Practice: Write the code to change the color of the text of
+//  a clicked comment.
+
+//  Hint: DOM elements have a style property that's an object
+//  with the CSS properties (named using camel-casing), e.g.,
+//  myLi.style.fontSize .
+
+//   --> Did it!! 
+//   added evt.target.style.color = 'green' to function handleClick(evt) !!
