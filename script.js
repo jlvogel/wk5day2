@@ -128,3 +128,123 @@ btn.addEventListener('click', function(evt) {
 
 //    The target property, which holds a reference to the DOM element that
 //    triggered (dispatched) the event.
+
+
+
+
+
+//          ASIDE     MAKING FUNCTIONS IN CLASS 12/1/23           
+////////////////////////////////////////////////////////////////////////////
+
+// function getRandomInt(min, max) {
+//   min = Math.ceil(min);
+//   max = Math.floor(max);
+//   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+// }
+
+// // now let's fill an array with random values!
+
+// const array = []
+
+// for (i=0;i<=100;i++) {
+//   array.push(getRandomInt(-100,100))
+// }
+// array.sort((a,b)=>a-b)
+// const isElementPairEqualToSum = (array, sum)=>{
+//   // we now have a sorted array, and a desired sum
+//   // if the sum is greater than half the max value
+//   // then we can return false right away because
+//   // then there can't be a pair
+//   console.log(array[-1])
+//   if(2*array[0]<= sum){return false}
+
+// }
+
+// console.log(array)
+// isElementPairEqualToSum(array,300)
+
+// let arr = ["a","c","p","z","b"]
+// arr.sort()
+// str = ""
+// for(let char of arr) {
+//   str+=char
+// }
+// console.log(str)
+
+// let sentence = "example for this function"
+
+// sentence = sentence.split(" ")
+// let newSentence = ""
+// for(let word of sentence){
+//   newSentence+=word[0].toUpperCase()+word.slice(1)+" "
+// }
+// console.log(newSentence)
+
+///////////////////////////////////////////////////////////////////////
+
+
+// Creating a new <li> element
+
+//  If we want to add a new comment, we're going to need to
+//  create a new <li> element.
+
+//  Here's how we can do it using the document.createElement
+//  method:
+
+// btn.addEventListener('click', function(evt) {
+//   const li = document.createElement('li');
+//   console.log(li)
+// });
+
+// Note: At this point, the element is "in memory" only
+// and is not part of the DOM (yet).
+
+// Creating a new Comment
+
+//  Okay, we have a new <li> element created and assigned to
+//  a variable named li, but it has no content.
+
+// We want to get whatever text the user has typed into the
+//  <input> element.
+
+//  As an exercise, find the property that holds the content of an
+// <input>.
+
+// --> ok looks like the property is value.
+
+console.dir(document.querySelector('#input'));
+
+// Creating a new Comment
+
+//  So, now we can set the textContent of the new <li>:
+
+// btn.addEventListener('click', function(evt) {
+//   const li = document.createElement('li');
+//   const inp = document.querySelector('input');
+//   li.textContent = inp.value;
+// });
+
+// Creating a new Comment
+
+//  Now the new <li> is ready to be added to the DOM!
+//  Which element do we want to add the <li> to ?
+
+//     --> I'm thinking to the <ul> element?
+
+// Creating a new Comment
+
+//  There are several ways to add DOM elements to the
+//  document using JavaScript.
+
+//  A common way to add new elements to another element is
+//  by using the appendChild method like this:
+
+btn.addEventListener('click', function(evt) {
+  const li = document.createElement('li');
+  const inp = document.querySelector('input');
+  li.textContent = inp.value;
+  // new code below
+  document.querySelector('ul').appendChild(li);
+});
+
+// Note that the new element is appended as the last child.
